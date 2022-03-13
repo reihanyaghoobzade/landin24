@@ -45,7 +45,7 @@ export default {
           })
           .then((response) => {
           brandItems.value = response.data.items;
-          loading.value = true;
+          loading.value = false;
           })
           .catch((error) => console.log(error));
       }
@@ -61,7 +61,6 @@ export default {
         })
         .then((response) => {
           cardItems.value = response.data.items;
-          loading.value = false;
         })
         .catch((error) => console.log(error));
     }

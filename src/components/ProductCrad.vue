@@ -2,7 +2,7 @@
     <div class="border rounded-lg p-4 flex flex-col justify-between gap-4 card">
       <div class="flex sm:flex-col sm:justify-around gap-3">
         <div class="w-1/3 sm:w-auto">
-          <img :src="cardItem['c-WoMta3EdKU']" alt="" class="block mx-auto sm:h-52">
+          <img :src="cardItem['c-WoMta3EdKU']" alt="تصویر محصول" class="block mx-auto sm:h-52">
         </div>
         <div class="flex flex-col justify-between w-2/3 sm:w-auto gap-3">
           <h3 class="font-semibold text-lg text-gray-700 card-title">{{ cardItem['c-zNhlqGccUo'] }}</h3>
@@ -26,13 +26,11 @@
     </div>
 </template>
 
-<script>
-export default {
-  props:{
-    cardItem: Object,
-    phoneNumber: Object,
-  },
-}
+<script setup>
+defineProps({
+  cardItem: Object,
+  phoneNumber: Object,
+})
 </script>
 
 <style>

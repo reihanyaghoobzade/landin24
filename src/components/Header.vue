@@ -9,30 +9,26 @@
     </header>
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
-export default {
-    props:{
-        item: Object,
-    },
-    setup() {
-    const search = ref();
 
-    function check() {
-        const card = document.querySelectorAll('.card');
-        for (let i = 0; i < card.length; i++) {
-            const cardTitle = card[i].querySelector('.card-title');
-            const txtValue = cardTitle.textContent || cardTitle.innerText;
-            if (txtValue.indexOf(search.value) > -1) {
-                card[i].classList.remove('hidden');
-            } else {
-                card[i].classList.add('hidden');
-            }
+defineProps({
+  item: Object,
+})
+
+const search = ref();
+
+function check() {
+    const card = document.querySelectorAll('.card');
+    for (let i = 0; i < card.length; i++) {
+        const cardTitle = card[i].querySelector('.card-title');
+        const txtValue = cardTitle.textContent || cardTitle.innerText;
+        if (txtValue.indexOf(search.value) > -1) {
+            card[i].classList.remove('hidden');
+        } else {
+            card[i].classList.add('hidden');
         }
     }
-
-    return { search, check };
-  },
 }
 </script>
 

@@ -7,12 +7,10 @@
   </footer>
 </template>
 
-<script>
-export default {
-  props:{
-    item: Object,
-  }
-}
+<script setup>
+defineProps({
+  item: Object,
+})
 </script>
 
 <style>
